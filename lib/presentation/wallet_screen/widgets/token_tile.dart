@@ -31,7 +31,8 @@ class TokenTile extends StatelessWidget {
             children: [
               Text('${CurrencyFormat.format(token.price, decimalDigits: 2)} \$', style: UITextStyle.caption(theme, color: theme.text400)),
               const SizedBox(width: 4.0),
-              Text('${token.percent > 0 ? '+' : ''}${CurrencyFormat.format(token.percent, decimalDigits: 2)}%', style: UITextStyle.caption(theme, color: percentColor)),
+              Text('${token.percent > 0 ? '+' : ''}${CurrencyFormat.format(token.percent, decimalDigits: 2)}%',
+                  style: UITextStyle.caption(theme, color: percentColor)),
             ],
           )
         ],
