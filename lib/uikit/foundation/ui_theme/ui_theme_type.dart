@@ -1,0 +1,4 @@
+enum UIThemeType {
+  dark,
+  light,
+}

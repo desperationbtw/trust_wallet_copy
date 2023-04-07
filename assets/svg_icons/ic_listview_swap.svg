@@ -1,0 +1,7 @@
+<svg id="vector" xmlns="http://www.w3.org/2000/svg" width="24.0d" height="24.0d" viewBox="0 0 34.0 34.0">
+	<path fill="#00000000" d="M17,33C25.8366,33 33,25.8366 33,17C33,8.1634 25.8366,1 17,1C8.1634,1 1,8.1634 1,17C1,25.8366 8.1634,33 17,33Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="path_0" />
+	<path fill="#00000000" d="M20.7333,10L25,14L20.7333,18" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="path_1" />
+	<path fill="#ffffff" d="M9,14H25" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="path_2" />
+	<path fill="#00000000" d="M13.2667,17L9,21L13.2667,25" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="path_3" />
+	<path fill="#ffffff" d="M25,21H9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="path_4" />
+</svg>

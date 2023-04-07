@@ -1,0 +1,71 @@
+name: trust_wallet_scm
+description: A new Flutter project.
+
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  flutter_bloc: ^8.1.2
+  get_it: ^7.2.0
+  bloc: ^8.1.1
+  pull_to_refresh: ^2.0.0
+  image: ^4.0.15
+  intl: ^0.18.0
+  persistent_bottom_nav_bar: ^5.0.2
+  extended_text: ^10.0.0
+  flutter_svg: ^2.0.4
+  pin_plus_keyboard:
+         path: ./package/pin_plus_keyboard-main
+  dio: ^5.0.3
+  shared_preferences: ^2.0.20
+  flutter_web_browser: ^0.17.1
+  flutter_native_splash: ^2.2.19
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.12.0
+flutter_icons:
+  android: true
+  image_path_android: "assets/icon/icon.png"
+flutter_native_splash:
+  color: "#1b1c1e"
+  image: assets/icon/background.png
+  color_dark: "#1b1c1e"
+  image_dark: assets/icon/background.png
+  android_12:
+    image: assets/icon/background.png
+    icon_background_color: "#1b1c1e"
+    image_dark: assets/icon/background.png
+    icon_background_color_dark: "#1b1c1e"
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/coins/
+    - assets/other/
+    - assets/truster/
+    - assets/svg_icons/
+  fonts:
+    - family: UIIcons
+      fonts:
+        - asset: assets/fonts/ui-icons.otf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/roboto/Roboto-Thin.ttf
+          weight: 300
+        - asset: assets/fonts/roboto/Roboto-Light.ttf
+          weight: 400
+        - asset: assets/fonts/roboto/Roboto-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/roboto/Roboto-Medium.ttf
+          weight: 600
+        - asset: assets/fonts/roboto/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/roboto/Roboto-Black.ttf
+          weight: 800

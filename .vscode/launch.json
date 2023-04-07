@@ -1,0 +1,45 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "trust_wallet_scm",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "trust_wallet_scm (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "trust_wallet_scm (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "pin_plus_keyboard-main",
+      "cwd": "package\\pin_plus_keyboard-main",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "pin_plus_keyboard-main (profile mode)",
+      "cwd": "package\\pin_plus_keyboard-main",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "pin_plus_keyboard-main (release mode)",
+      "cwd": "package\\pin_plus_keyboard-main",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}

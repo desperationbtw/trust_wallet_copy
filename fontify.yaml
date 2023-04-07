@@ -1,0 +1,11 @@
+fontify: # При добавлении новых иконок в assets/svg_icons необходимо перегенерировать их командой fontify
+  input_svg_dir: "assets/svg_icons"
+  output_font_file: "assets/fonts/ui-icons.otf"
+  output_class_file: "lib/uikit/foundation/ui_icons.dart"
+  class_name: "UIIcons"
+  indent: 2
+  font_name: "UIIcons"
+  normalize: false
+  ignore_shapes: true
+  recursive: false
+  verbose: true
