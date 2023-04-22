@@ -17,8 +17,9 @@ class HeaderSliver extends StatefulWidget {
 }
 
 class _HeaderSliverState extends State<HeaderSliver> {
-  final mainContent = 260.0;
-  final additionalSize = 80.0;
+  final mainContent = 280.0;
+  // final additionalSize = 80.0;
+  final additionalSize = 0.0;
   late String fixedBalance;
   late double expandedHeight;
 
@@ -91,32 +92,32 @@ class _HeaderSliverState extends State<HeaderSliver> {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: additionalSize,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                              child: Container(
-                                padding: const EdgeInsets.all(14.0),
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xff5e4300),
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Text(
-                                  'Secure your assets, back up wallet now.',
-                                  style: UITextStyle.subTitle(
-                                    theme,
-                                    color: const Color(0xffe3c788),
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      // SizedBox(
+                      //   height: additionalSize,
+                      //   child: Column(
+                      //     children: [
+                      //       Padding(
+                      //         padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      //         child: Container(
+                      //           padding: const EdgeInsets.all(14.0),
+                      //           width: double.infinity,
+                      //           decoration: BoxDecoration(
+                      //             color: const Color(0xff5e4300),
+                      //             borderRadius: BorderRadius.circular(8),
+                      //           ),
+                      //           child: Text(
+                      //             'Secure your assets, back up wallet now.',
+                      //             style: UITextStyle.subTitle(
+                      //               theme,
+                      //               color: const Color(0xffe3c788),
+                      //               fontWeight: FontWeight.w400,
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
