@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -24,6 +25,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
     bloc = GetIt.I.get<WelcomeScreenBloc>();
     bloc.add(WelcomeScreenInitEvent());
+
+    Future.delayed(Duration.zero, () {
+      context.setLocale(const Locale('en'));
+    });
   }
 
   @override
@@ -63,13 +68,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       Column(
                         children: [
                           Text(
-                            'Конфиденциальный и безопасный',
+                            'Конфиденциальный и безопасный'.tr(),
                             textAlign: TextAlign.center,
                             style: UITextStyle.custom(theme, fontSize: 28).copyWith(height: 1.2),
                           ),
                           const SizedBox(height: 8.0),
                           Text(
-                            'Приватные ключи никогда не покидют ваше устройство.',
+                            'Приватные ключи никогда не покидют ваше устройство.'.tr(),
                             textAlign: TextAlign.center,
                             style: UITextStyle.custom(theme, fontSize: 15, color: theme.textBlue).copyWith(height: 1.2),
                           ),
@@ -97,7 +102,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     width: double.infinity,
                     child: FilledButton(
                       onPressed: () {},
-                      child: const Text('СОЗДАТЬ НОВЫЙ КОШЕЛЕК'),
+                      child: const Text('СОЗДАТЬ НОВЫЙ КОШЕЛЕК').tr(),
                     ),
                   ),
                 ),
@@ -112,7 +117,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       pageTransitionAnimation: PageTransitionAnimation.cupertino,
                     );
                   },
-                  child: const Text('У меня уже есть кошелек'),
+                  child: const Text('У меня уже есть кошелек').tr(),
                 ),
                 const SizedBox(height: 50.0)
               ],

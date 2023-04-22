@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -9,17 +10,26 @@ import 'uikit/uikit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   await DI.init();
 
-  initializeDateFormatting().then((value) {
-    runApp(
-      BlocProvider(
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ru'),
+      ],
+      path: 'assets/translations',
+      child: BlocProvider(
         create: (context) => UIThemeCubit(),
         child: BlocBuilder<UIThemeCubit, UIThemeState>(
           builder: (context, state) {
             return UITheme(
               theme: state.theme,
               child: MaterialApp(
+                localizationsDelegates: context.localizationDelegates,
+                supportedLocales: context.supportedLocales,
+                locale: context.locale,
                 title: 'Trust Wallet',
                 debugShowCheckedModeBanner: false,
                 theme: ThemeData(
@@ -69,6 +79,8 @@ void main() async {
           },
         ),
       ),
-    );
-  });
+    ),
+  );
+
+  // initializeDateFormatting();
 }

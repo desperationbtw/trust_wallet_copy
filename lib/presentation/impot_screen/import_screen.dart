@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -27,9 +28,9 @@ class _ImpotScreenState extends State<ImpotScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const UIAppBar(
-        title: 'Импортировать',
-        actions: [
+      appBar: UIAppBar(
+        title: 'Импортировать'.tr(),
+        actions: const [
           Icon(Icons.search),
           SizedBox(width: 16.0),
           Icon(Icons.info_outline),
@@ -42,17 +43,17 @@ class _ImpotScreenState extends State<ImpotScreen> {
           if (state is ImportProgressState) return const Center(child: CircularProgressIndicator());
           return ListView(
             children: [
-              _ListItem(leading: 'assets/other/google_rounded.png', title: 'Востановление с помощью Google', onTap: () {}),
+              _ListItem(leading: 'assets/other/google_rounded.png', title: 'Востановление с помощью Google'.tr(), onTap: () {}),
               const Divider(thickness: 0.2),
               _ListItem(
                   leading: 'assets/other/ic_launcher_round.webp',
-                  title: 'Мульти-монетный кошелек',
+                  title: 'Мульти-монетный кошелек'.tr(),
                   onTap: () {
                     PersistentNavBarNavigator.pushNewScreen(
                       context,
                       screen: VariantScreen(
                         variant: ImportVariant(
-                          name: 'Импортировать Мульти-монетный кошелек',
+                          name: 'Импортировать Мульти-монетный кошелек'.tr(),
                           logo: '',
                           options: {ImportOptions.phrase},
                         ),

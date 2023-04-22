@@ -48,6 +48,7 @@ flutter_native_splash:
 flutter:
   uses-material-design: true
   assets:
+    - assets/translations/
     - assets/coins/
     - assets/other/
     - assets/truster/
