@@ -5,6 +5,7 @@ import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:intl/intl.dart';
 import 'package:trust_wallet_scm/domain/models/token.dart';
 import 'package:trust_wallet_scm/domain/models/transaction.dart';
+import 'package:trust_wallet_scm/presentation/token_screen/token_screen.dart';
 import 'package:trust_wallet_scm/uikit/uikit.dart';
 import 'package:trust_wallet_scm/utils/currency_format.dart';
 
@@ -48,7 +49,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
                       title: 'Дата',
                       hasInfo: false,
                       child: Text(
-                        DateFormat("dd MMM, hh:mm", 'ru').format(widget.transaction.date),
+                        _transactionDate(widget.transaction.date),
                         style: UITextStyle.custom(theme, fontSize: 15, color: const Color(0xff95a9c2)),
                       ),
                     ),
@@ -141,7 +142,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
                       title: 'Сетевой сбор',
                       hasInfo: true,
                       child: Text(
-                        '${CurrencyFormat.format(widget.transaction.comission)} ${widget.token.type.short}\n(${CurrencyFormat.format(widget.transaction.comission * widget.token.price)} \$)',
+                        '${CurrencyFormat.format(widget.transaction.comission)} ${widget.token.type.short}\n(${CurrencyFormat.format(widget.transaction.comission * widget.token.price!)} \$)',
                         textAlign: TextAlign.end,
                         style: UITextStyle.custom(theme, fontSize: 14, color: const Color(0xff95a9c2)),
                       ),
@@ -190,6 +191,12 @@ class _TransactionScreenState extends State<TransactionScreen> {
       ),
     );
   }
+
+  String _transactionDate(DateTime date) {
+    if (date.isToday()) return 'Сегодня${DateFormat(", hh:mm", 'ru').format(date)}';
+    if (date.isYesterday()) return 'Вчера${DateFormat(", hh:mm", 'ru').format(date)}';
+    return DateFormat("dd MMM, hh:mm", 'ru').format(date);
+  }
 }
 
 class _Values extends StatelessWidget {
@@ -215,7 +222,7 @@ class _Values extends StatelessWidget {
         children: [
           Text('${transaction.count > 0 ? '+' : ''}${CurrencyFormat.format(transaction.count)} ${token.type.short}',
               style: UITextStyle.valueHeader(theme, color: percentColor)),
-          Text('≈ ${CurrencyFormat.format(transaction.count * token.price, decimalDigits: 2)} \$',
+          Text('≈ ${CurrencyFormat.format(transaction.count * token.price!, decimalDigits: 2)} \$',
               style: UITextStyle.subTitle(theme, color: theme.textBlue)),
         ],
       ),

@@ -35,94 +35,90 @@ class _WalletScreenState extends State<WalletScreen> with TickerProviderStateMix
       body: BlocBuilder<WalletScreenBloc, WalletScreenState>(
         bloc: _bloc,
         builder: (context, state) {
-          if (state is WalletScreenProcessingState) return const SizedBox.shrink();
-          if (state is WalletScreenContentState) {
-            return DefaultTabController(
-              length: 2,
-              child: NestedScrollView(
-                headerSliverBuilder: (context, innerScrolled) {
-                  return [
-                    HeaderSliver(
-                      walletName: state.walletName,
-                      balance: state.balance,
-                    ),
-                  ];
-                },
-                body: TabBarView(children: [
-                  Center(
-                    child: Builder(
-                      builder: (context) {
-                        return RefreshIndicator(
-                          backgroundColor: theme.ui100,
-                          color: theme.text800,
-                          strokeWidth: 2,
-                          onRefresh: () {
-                            return Future.wait([
-                              Future(() => _bloc.add(WalletScreenInitEvent())),
-                              Future.delayed(const Duration(milliseconds: 200)),
-                            ]);
-                          },
-                          child: CustomScrollView(
-                            slivers: [
-                              SliverList(
-                                delegate: SliverChildListDelegate(
-                                  [
-                                    const SizedBox(height: 16.0),
-                                    ...state.tokens
-                                        .map(
-                                          (e) => TokenTile(
-                                            token: e,
-                                            onTap: () {
-                                              PersistentNavBarNavigator.pushNewScreen(
-                                                context,
-                                                screen: TokenScreen(
-                                                  token: e,
-                                                ),
-                                                withNavBar: true,
-                                                pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                                              );
-                                            },
-                                          ),
-                                        )
-                                        .toList(),
-                                    ListTile(
-                                      leading: ClipRRect(
-                                        borderRadius: BorderRadius.circular(21.0),
-                                        child: CircleAvatar(
-                                          backgroundColor: Colors.transparent,
-                                          child: Center(
-                                            child: CircleAvatar(
-                                              backgroundColor: theme.accent,
-                                              radius: 10.0,
-                                              child: Icon(Icons.add, color: theme.background, size: 16.0),
-                                            ),
+          return DefaultTabController(
+            length: 2,
+            child: NestedScrollView(
+              headerSliverBuilder: (context, innerScrolled) {
+                return [
+                  HeaderSliver(
+                    walletName: state.walletName,
+                    balance: state.balance,
+                  ),
+                ];
+              },
+              body: TabBarView(children: [
+                Center(
+                  child: Builder(
+                    builder: (context) {
+                      return RefreshIndicator(
+                        backgroundColor: theme.ui100,
+                        color: theme.text800,
+                        strokeWidth: 2,
+                        onRefresh: () {
+                          return Future.wait([
+                            Future(() => _bloc.add(WalletScreenInitEvent())),
+                            Future.delayed(const Duration(milliseconds: 200)),
+                          ]);
+                        },
+                        child: CustomScrollView(
+                          slivers: [
+                            SliverList(
+                              delegate: SliverChildListDelegate(
+                                [
+                                  const SizedBox(height: 16.0),
+                                  ...state.tokens
+                                      .map(
+                                        (e) => TokenTile(
+                                          token: e,
+                                          onTap: () {
+                                            PersistentNavBarNavigator.pushNewScreen(
+                                              context,
+                                              screen: TokenScreen(
+                                                token: e,
+                                              ),
+                                              withNavBar: true,
+                                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                            );
+                                          },
+                                        ),
+                                      )
+                                      .toList(),
+                                  ListTile(
+                                    leading: ClipRRect(
+                                      borderRadius: BorderRadius.circular(21.0),
+                                      child: CircleAvatar(
+                                        backgroundColor: Colors.transparent,
+                                        child: Center(
+                                          child: CircleAvatar(
+                                            backgroundColor: theme.accent,
+                                            radius: 10.0,
+                                            child: Icon(Icons.add, color: theme.background, size: 16.0),
                                           ),
                                         ),
                                       ),
-                                      title: Text(
-                                        'Add Tokens',
-                                        style: UITextStyle.custom(theme, fontSize: 16.0, color: theme.accent, fontWeight: FontWeight.w500),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    )
-                                  ],
-                                ),
+                                    ),
+                                    title: Text(
+                                      'Add Tokens',
+                                      style: UITextStyle.custom(theme, fontSize: 16.0, color: theme.accent, fontWeight: FontWeight.w500),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  )
+                                ],
                               ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                   ),
-                  const Center(
-                    child: Text('todo'),
-                  )
-                ]),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
+                ),
+                const Center(
+                  child: Text('todo'),
+                )
+              ]),
+            ),
+          );
         },
       ),
     );

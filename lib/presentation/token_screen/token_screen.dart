@@ -49,7 +49,7 @@ class _TokenScreenState extends State<TokenScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = UITheme.of(context);
-    final percentColor = widget.token.percent > 0 ? theme.green : theme.red;
+    final percentColor = widget.token.percent! > 0 ? theme.green : theme.red;
 
     return Scaffold(
       backgroundColor: theme.background,
@@ -80,12 +80,12 @@ class _TokenScreenState extends State<TokenScreen> {
                   Row(
                     children: [
                       Text(
-                        '${CurrencyFormat.format(widget.token.price)} \$',
+                        '${CurrencyFormat.format(widget.token.price!)} \$',
                         style: UITextStyle.custom(theme, fontSize: 14.0, color: const Color(0xffc3c6cf)),
                       ),
                       const SizedBox(width: 4.0),
                       Text(
-                        '${widget.token.percent > 0 ? '+' : ''}${CurrencyFormat.format(widget.token.percent, decimalDigits: 2)}%',
+                        '${widget.token.percent! > 0 ? '+' : ''}${CurrencyFormat.format(widget.token.percent!, decimalDigits: 2)}%',
                         style: UITextStyle.custom(theme, fontSize: 14.0, color: percentColor),
                       ),
                     ],
@@ -101,7 +101,7 @@ class _TokenScreenState extends State<TokenScreen> {
               textAlign: TextAlign.center,
             ),
             Text(
-              '≈${CurrencyFormat.format(widget.token.fiatCount, decimalDigits: 2)} \$',
+              '≈${CurrencyFormat.format(widget.token.fiatCount!, decimalDigits: 2)} \$',
               style: UITextStyle.custom(theme, fontSize: 14.0),
               textAlign: TextAlign.center,
             ),

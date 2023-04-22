@@ -24,6 +24,16 @@ class _HeaderSliverState extends State<HeaderSliver> {
   late double expandedHeight;
 
   @override
+  void didUpdateWidget(covariant HeaderSliver oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.balance != widget.balance) {
+      setState(() {
+        fixedBalance = CurrencyFormat.format(widget.balance, decimalDigits: 2);
+      });
+    }
+  }
+
+  @override
   void initState() {
     super.initState();
     fixedBalance = CurrencyFormat.format(widget.balance, decimalDigits: 2);

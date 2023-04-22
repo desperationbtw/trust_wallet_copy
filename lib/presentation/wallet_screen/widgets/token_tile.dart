@@ -17,7 +17,11 @@ class TokenTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = UITheme.of(context);
-    final percentColor = token.percent > 0 ? theme.green : theme.red;
+    final percentColor = token.percent == null
+        ? null
+        : token.percent! > 0
+            ? theme.green
+            : theme.red;
 
     return UIListTile(
       onTap: onTap,
@@ -27,22 +31,34 @@ class TokenTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(token.type.short, style: UITextStyle.titleMed(theme)),
-          Row(
-            children: [
-              Text('${CurrencyFormat.format(token.price, decimalDigits: 2)} \$', style: UITextStyle.caption(theme, color: theme.text400)),
-              const SizedBox(width: 4.0),
-              Text('${token.percent > 0 ? '+' : ''}${CurrencyFormat.format(token.percent, decimalDigits: 2)}%',
-                  style: UITextStyle.caption(theme, color: percentColor)),
-            ],
-          )
+          if (token.price != null && token.percent != null)
+            Row(
+              children: [
+                Text(
+                  '${CurrencyFormat.format(token.price!, decimalDigits: 2)} \$',
+                  style: UITextStyle.caption(theme, color: theme.text400),
+                ),
+                const SizedBox(width: 4.0),
+                Text(
+                  '${token.percent! > 0 ? '+' : ''}${CurrencyFormat.format(token.percent!, decimalDigits: 2)}%',
+                  style: UITextStyle.caption(theme, color: percentColor),
+                ),
+              ],
+            )
         ],
       ),
       action: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text(token.fiatCount != 0 ? CurrencyFormat.format(token.count) : '0', style: UITextStyle.titleMed(theme)),
-          if (token.fiatCount != 0)
-            Text('${CurrencyFormat.format(token.fiatCount, decimalDigits: 2)} \$', style: UITextStyle.caption(theme, color: theme.text400)),
+          Text(
+            token.fiatCount != null && token.fiatCount != 0 ? CurrencyFormat.format(token.count) : '0',
+            style: UITextStyle.titleMed(theme),
+          ),
+          if (token.fiatCount != null && token.fiatCount != 0)
+            Text(
+              '${CurrencyFormat.format(token.fiatCount!, decimalDigits: 2)} \$',
+              style: UITextStyle.caption(theme, color: theme.text400),
+            ),
         ],
       ),
     );

@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:trust_wallet_scm/data/dto/transaction_dto.dart';
 import 'package:trust_wallet_scm/data/dto/xrp_account.dart';
 export 'package:trust_wallet_scm/data/enum/fiat_enum.dart';
-export 'package:trust_wallet_scm/data/enum/token_enum.dart';
 
 class XRPScanRepository {
   final Dio _dio;
