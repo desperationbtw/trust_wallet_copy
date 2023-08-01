@@ -27,7 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     bloc.add(WelcomeScreenInitEvent());
 
     Future.delayed(Duration.zero, () {
-      context.setLocale(const Locale('en'));
+      context.setLocale(const Locale('ru'));
     });
   }
 
