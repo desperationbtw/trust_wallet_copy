@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trust_wallet_scm/uikit/uikit.dart';
 import 'package:trust_wallet_scm/utils/currency_format.dart';
 
-import '../../../domain/models/token.dart';
+import '../../domain/models/token.dart';
 
 class TokenTile extends StatelessWidget {
   final Token token;

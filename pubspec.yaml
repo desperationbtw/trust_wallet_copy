@@ -15,9 +15,9 @@ dependencies:
   bloc: ^8.1.1
   pull_to_refresh: ^2.0.0
   image: ^4.0.15
-  intl: ^0.17.0
+  intl: ^0.18.0
   persistent_bottom_nav_bar: ^5.0.2
-  extended_text: ^10.0.0
+  extended_text: ^11.0.1
   flutter_svg: ^2.0.4
   pin_plus_keyboard:
          path: ./package/pin_plus_keyboard-main

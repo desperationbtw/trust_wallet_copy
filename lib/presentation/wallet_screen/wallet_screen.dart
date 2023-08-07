@@ -7,7 +7,7 @@ import 'package:trust_wallet_scm/presentation/wallet_screen/bloc/wallet_screen_b
 import 'package:trust_wallet_scm/uikit/uikit.dart';
 
 import 'widgets/header_sliver.dart';
-import 'widgets/token_tile.dart';
+import '../widgets/token_tile.dart';
 
 class WalletScreen extends StatefulWidget {
   const WalletScreen({super.key});
@@ -98,7 +98,7 @@ class _WalletScreenState extends State<WalletScreen> with TickerProviderStateMix
                                       ),
                                     ),
                                     title: Text(
-                                      'Add Tokens',
+                                      'Добавить токены',
                                       style: UITextStyle.custom(theme, fontSize: 16.0, color: theme.accent, fontWeight: FontWeight.w500),
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
