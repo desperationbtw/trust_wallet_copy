@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:trust_wallet_scm/presentation/token_screen/token_screen.dart';
 import 'package:trust_wallet_scm/presentation/wallet_screen/bloc/wallet_screen_bloc.dart';
+import 'package:trust_wallet_scm/presentation/welcome_screen_v2/widgets/welcome_button.dart';
 import 'package:trust_wallet_scm/presentation/widgets/token_tile.dart';
 import 'package:trust_wallet_scm/presentation/widgets/token_tile_view.dart';
 import 'package:trust_wallet_scm/uikit/uikit.dart';
@@ -49,7 +50,7 @@ class _WelcomeScreenV2State extends State<WelcomeScreenV2> with TickerProviderSt
                         Text(
                           'TRUST',
                           textAlign: TextAlign.center,
-                          style: UITextStyle.subTitle(theme, color: theme.text400).copyWith(fontSize: 22.0),
+                          style: UITextStyle.custom(theme, color: theme.text400, fontSize: 22.0),
                         ),
                         const SizedBox(height: 8.0),
                         Padding(
@@ -59,6 +60,20 @@ class _WelcomeScreenV2State extends State<WelcomeScreenV2> with TickerProviderSt
                             textAlign: TextAlign.center,
                             style: UITextStyle.subTitle(theme, color: theme.text400).copyWith(fontSize: 16.0),
                           ),
+                        ),
+                        const SizedBox(height: 16.0),
+                        WelcomeButton(
+                          header: 'У меня нет кошелька',
+                          footer: 'Создать\nмультичейн-кошелек',
+                          onTap: () {},
+                          icon: Icons.add,
+                        ),
+                        const SizedBox(height: 16.0),
+                        WelcomeButton(
+                          header: 'У меня уже есть кошелек',
+                          footer: 'Импортировать кошелек',
+                          onTap: () {},
+                          icon: Icons.arrow_downward,
                         ),
                       ],
                     ),

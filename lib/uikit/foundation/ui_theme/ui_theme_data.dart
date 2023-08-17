@@ -7,6 +7,7 @@ class UIThemeData {
 
   final Color accent;
   final Color accentDark;
+  final Color accentGray; //252a30
   final Color background;
   final Color ui100;
   final Color ui300;
@@ -34,6 +35,7 @@ class UIThemeData {
   UIThemeData.light({
     this.accent = const Color(0xFF303b44),
     this.accentDark = const Color(0xFF303b44),
+    this.accentGray = const Color(0xff252a30),
     this.background = const Color(0xFFf0f0f0),
     this.ui100 = const Color(0xFFF5F5F5),
     this.ui300 = const Color(0xFFE0E0E0),
@@ -59,8 +61,9 @@ class UIThemeData {
   UIThemeData.dark({
     this.accent = const Color(0xffa1c8ff),
     this.accentDark = const Color(0xff00315a),
+    this.accentGray = const Color(0xff252a30),
     this.background = const Color(0xff1b1c1e),
-    this.ui100 = const Color(0xff252a30), 
+    this.ui100 = const Color(0xff252a30),
     this.ui300 = const Color(0xff1a222d),
     this.ui400 = const Color(0xffc3c6cd),
     this.ui600 = const Color(0xFFFDFDFD),
@@ -80,7 +83,6 @@ class UIThemeData {
     this.red = const Color(0xfff7b7ae),
     this.divider = const Color(0xff8e9196),
   }) : _theme = UIThemeType.dark;
-  
 
   UIThemeType get type => _theme;
 
