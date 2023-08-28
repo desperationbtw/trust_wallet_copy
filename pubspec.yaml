@@ -17,10 +17,10 @@ dependencies:
   image: ^4.0.15
   intl: ^0.18.0
   persistent_bottom_nav_bar: ^5.0.2
-  extended_text: ^11.0.1
+  extended_text: ^11.1.0
   flutter_svg: ^2.0.4
   pin_plus_keyboard:
-         path: ./package/pin_plus_keyboard-main
+         path: ./package/pin_plus_keyboard-main 
   dio: ^5.0.3
   shared_preferences: ^2.0.20
   flutter_web_browser: ^0.17.1

@@ -19,7 +19,7 @@ class UIListTile extends StatelessWidget {
     this.leading,
     this.action,
     this.hasDivider = true,
-    this.padding = const EdgeInsets.all(16.0),
+    this.padding = const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
     this.background,
   }) : assert(middleWidget != null || lable != null, 'MIDDLE & LABLE == NULL');
 

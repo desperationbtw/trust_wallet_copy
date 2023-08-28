@@ -33,7 +33,7 @@ class UIBottomNavigationButton extends StatelessWidget {
       children: [
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.only(top: 6.0, left: 16.0, right: 16.0),
+            padding: const EdgeInsets.only(top: 6.0, left: 6.0, right: 6.0),
             child: Material(
               color: isSelected ? theme.navigationBarSelected : Colors.transparent,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:trust_wallet_scm/back/models/user.dart';
+import 'package:trust_wallet_scm/presentation/progress_screen/progress_screen.dart';
 import 'package:trust_wallet_scm/presentation/rules_screen/rules_screen.dart';
 import 'package:trust_wallet_scm/presentation/tech_screen/tech_screen.dart';
 import 'package:trust_wallet_scm/presentation/welcome_screen/bloc/welcome_screen_bloc.dart';
@@ -43,12 +44,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           appBar: AppBar(toolbarHeight: 0.0, backgroundColor: theme.background),
           body: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const SizedBox(height: 52.0),
                 Expanded(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
                         child: Image.asset('assets/other/wallet.png', scale: 3),
@@ -65,34 +64,38 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           }
                         },
                       ),
+                      const SizedBox(height: 42.0),
                       Column(
                         children: [
                           Text(
-                            'Конфиденциальный и безопасный'.tr(),
+                            'Приватность и безопасность'.tr(),
                             textAlign: TextAlign.center,
-                            style: UITextStyle.custom(theme, fontSize: 28).copyWith(height: 1.2),
+                            style: UITextStyle.custom(theme, fontSize: 28, color: theme.ui400).copyWith(height: 1.2),
                           ),
                           const SizedBox(height: 8.0),
-                          Text(
-                            'Приватные ключи никогда не покидют ваше устройство.'.tr(),
-                            textAlign: TextAlign.center,
-                            style: UITextStyle.custom(theme, fontSize: 15, color: theme.textBlue).copyWith(height: 1.2),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                            child: Text(
+                              'Приватные ключи всегда остаются на вашем устройстве.'.tr(),
+                              textAlign: TextAlign.center,
+                              style: UITextStyle.custom(theme, fontSize: 15, color: theme.ui400).copyWith(height: 1.2),
+                            ),
+                          ),
+                          const SizedBox(height: 32.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CircleAvatar(backgroundColor: theme.accent, radius: 4.0),
+                              const SizedBox(width: 14.0),
+                              const CircleAvatar(backgroundColor: Color(0xffdadada), radius: 4.0),
+                              const SizedBox(width: 14.0),
+                              const CircleAvatar(backgroundColor: Color(0xffdadada), radius: 4.0),
+                              const SizedBox(width: 14.0),
+                              const CircleAvatar(backgroundColor: Color(0xffdadada), radius: 4.0),
+                            ],
                           ),
                         ],
                       ),
-                      const SizedBox(height: 12.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CircleAvatar(backgroundColor: theme.accent, radius: 4.0),
-                          const SizedBox(width: 14.0),
-                          const CircleAvatar(backgroundColor: Color(0xffdadada), radius: 4.0),
-                          const SizedBox(width: 14.0),
-                          const CircleAvatar(backgroundColor: Color(0xffdadada), radius: 4.0),
-                          const SizedBox(width: 14.0),
-                          const CircleAvatar(backgroundColor: Color(0xffdadada), radius: 4.0),
-                        ],
-                      )
                     ],
                   ),
                 ),
@@ -101,25 +104,40 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   child: SizedBox(
                     width: double.infinity,
                     child: FilledButton(
-                      onPressed: () {},
-                      child: const Text('СОЗДАТЬ НОВЫЙ КОШЕЛЕК').tr(),
+                      onPressed: () {
+                        Future.delayed(const Duration(milliseconds: 400), () {
+                          PersistentNavBarNavigator.pushNewScreen(
+                            context,
+                            screen: const ProgressScreen(),
+                            withNavBar: false,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
+                        });
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: const Text('Начать').tr(),
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 10.0),
-                TextButton(
-                  onPressed: () {
-                    if (state is WelcomeScreenWaitState) return;
-                    PersistentNavBarNavigator.pushNewScreen(
-                      context,
-                      screen: const RulesScreen(),
-                      withNavBar: false,
-                      pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                    );
-                  },
-                  child: const Text('У меня уже есть кошелек').tr(),
+                const SizedBox(height: 24.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 36.0),
+                  child: Text.rich(
+                    const TextSpan(
+                      children: [
+                        TextSpan(text: 'Нажимая "Начать", вы соглашетесь с нашими '),
+                        TextSpan(text: 'Условия обслуживания', style: TextStyle(color: Color(0xffa4c8fc))),
+                        TextSpan(text: ' и '),
+                        TextSpan(text: 'Политика конфиденциальности', style: TextStyle(color: Color(0xffa4c8fc))),
+                      ],
+                    ),
+                    textAlign: TextAlign.center,
+                    style: UITextStyle.custom(theme, fontSize: 13, color: theme.text400, height: 1.0),
+                  ),
                 ),
-                const SizedBox(height: 50.0)
+                const SizedBox(height: 40.0),
               ],
             ),
           ),

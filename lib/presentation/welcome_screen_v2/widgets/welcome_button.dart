@@ -23,7 +23,7 @@ class WelcomeButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: theme.background,
         border: Border.all(
-          color: theme.divider,
+          color: theme.border,
           width: 1.0,
         ),
         borderRadius: BorderRadius.circular(8.0),
@@ -36,7 +36,7 @@ class WelcomeButton extends StatelessWidget {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -46,9 +46,9 @@ class WelcomeButton extends StatelessWidget {
                         backgroundColor: Colors.transparent,
                         child: Center(
                           child: CircleAvatar(
-                            backgroundColor: theme.accentGray,
+                            backgroundColor: theme.circleBackground,
                             radius: 18.0,
-                            child: Icon(icon, color: theme.textWhite, size: 24.0),
+                            child: Icon(icon, color: theme.text800, size: 24.0),
                           ),
                         ),
                       ),
@@ -59,16 +59,16 @@ class WelcomeButton extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(header, style: UITextStyle.custom(theme, fontWeight: FontWeight.w500)),
+                            Text(header, style: UITextStyle.custom(theme, fontWeight: FontWeight.w500, color: theme.text800)),
                             Text(
                               footer,
-                              style: UITextStyle.custom(theme, fontWeight: FontWeight.w400, fontSize: 14.0, color: theme.text400),
+                              style: UITextStyle.custom(theme, fontWeight: FontWeight.w400, fontSize: 14.0, color: theme.textGray, height: 1.3),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    Icon(Icons.arrow_forward_sharp, color: theme.text800),
+                    Icon(UIIcons.kit_arrow_right, color: theme.text800),
                   ],
                 ),
               ),

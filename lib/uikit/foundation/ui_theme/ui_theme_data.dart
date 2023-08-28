@@ -16,7 +16,7 @@ class UIThemeData {
   final Color ui800;
   final Color uiDisable;
   final Color textBlue; //95a9c2
-  final Color textGray; //8c9099
+  final Color textGray; //8d919a
   final Color text400;
   final Color text500;
   final Color text600;
@@ -31,6 +31,8 @@ class UIThemeData {
   final Color red; //d44938
 
   final Color divider; //8e9196
+  final Color border; //43484e
+  final Color circleBackground; //383643
 
   UIThemeData.light({
     this.accent = const Color(0xFF303b44),
@@ -56,6 +58,8 @@ class UIThemeData {
     this.green = const Color(0xff4ca297),
     this.red = const Color(0xffd44938),
     this.divider = const Color(0xffd44938),
+    this.border = const Color(0xff43484e),
+    this.circleBackground = const Color(0xff383643),
   }) : _theme = UIThemeType.light;
 
   UIThemeData.dark({
@@ -65,13 +69,13 @@ class UIThemeData {
     this.background = const Color(0xff1b1c1e),
     this.ui100 = const Color(0xff252a30),
     this.ui300 = const Color(0xff1a222d),
-    this.ui400 = const Color(0xffc3c6cd),
+    this.ui400 = const Color(0xffc3c6cf),
     this.ui600 = const Color(0xFFFDFDFD),
     this.ui800 = const Color(0xFFFDFDFD),
     this.uiDisable = const Color(0xFF474747),
     this.textBlue = const Color(0xff95a9c2),
-    this.textGray = const Color(0xff8c9099),
-    this.text400 = const Color(0xffc3c6cd),
+    this.textGray = const Color(0xff8d919a),
+    this.text400 = const Color(0xffc3c6cf),
     this.text500 = const Color(0xFFbbc8d9),
     this.text600 = const Color(0xffbcc9dc),
     this.text800 = const Color(0xFFe3e2e7),
@@ -82,6 +86,8 @@ class UIThemeData {
     this.green = const Color(0xff6cd9b2),
     this.red = const Color(0xfff7b7ae),
     this.divider = const Color(0xff8e9196),
+    this.border = const Color(0xff43484e),
+    this.circleBackground = const Color(0xff383643),
   }) : _theme = UIThemeType.dark;
 
   UIThemeType get type => _theme;

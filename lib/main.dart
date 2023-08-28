@@ -42,11 +42,11 @@ void main() async {
                   colorScheme: ColorScheme.fromSwatch(
                     brightness: Brightness.dark,
                     backgroundColor: const Color(0xff1b1c1e),
-                    cardColor: const Color(0xff252a30),
+                    cardColor: const Color(0xff212429),
                     primarySwatch: Colors.blue,
                   ),
                   cardTheme: const CardTheme(
-                    surfaceTintColor: Color(0xff252a30),
+                    surfaceTintColor: Color(0xff212429),
                   ),
                   appBarTheme: AppBarTheme(
                     iconTheme: IconThemeData(color: state.theme.text800),

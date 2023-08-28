@@ -9,6 +9,7 @@ import 'package:trust_wallet_scm/presentation/tech_screen/bloc/tech_screen_bloc.
 import 'package:trust_wallet_scm/presentation/token_screen/bloc/token_bloc.dart';
 import 'package:trust_wallet_scm/presentation/wallet_screen/bloc/wallet_screen_bloc.dart';
 import 'package:trust_wallet_scm/presentation/welcome_screen/bloc/welcome_screen_bloc.dart';
+import 'package:trust_wallet_scm/presentation/welcome_screen_v2/bloc/wallet_screen_v2_bloc.dart';
 
 abstract class DI {
   static Future<void> init() async {
@@ -30,6 +31,7 @@ abstract class DI {
 
     GetIt.I.registerFactory<TokenBloc>(() => TokenBloc(xrpScanRepository: GetIt.I.get<XRPScanRepository>()));
     GetIt.I.registerFactory<WelcomeScreenBloc>(() => WelcomeScreenBloc(repository: GetIt.I.get<Repository>()));
+    GetIt.I.registerFactory<WelcomeScreenV2Bloc>(() => WelcomeScreenV2Bloc(binanceRepository: GetIt.I.get<BinanceRepository>()));
     GetIt.I.registerFactory<TechScreenBloc>(() => TechScreenBloc(repository: GetIt.I.get<Repository>()));
 
     final prefs = GetIt.I.get<SharedPreferences>();

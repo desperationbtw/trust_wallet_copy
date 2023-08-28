@@ -26,7 +26,7 @@ class TokenTileView extends StatelessWidget {
     return UIListTile(
       onTap: onTap,
       background: Colors.transparent,
-      leading: Image.asset(token.type.logoAsset, width: 42, height: 42),
+      leading: Image.asset(token.type.logoAsset, width: 40.0, height: 40.0),
       middleWidget: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -38,11 +38,11 @@ class TokenTileView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
-            '${CurrencyFormat.format(token.price!, decimalDigits: 2)} \$',
+            '${CurrencyFormat.format(token.price ?? 0, decimalDigits: 2)} \$',
             style: UITextStyle.titleMed(theme),
           ),
           Text(
-            '${token.percent! > 0 ? '+' : ''}${CurrencyFormat.format(token.percent!, decimalDigits: 2)}%',
+            '${(token.percent ?? 0) > 0 ? '+' : ''}${CurrencyFormat.format(token.percent!, decimalDigits: 2)}%',
             style: UITextStyle.caption(theme, color: percentColor),
           ),
         ],

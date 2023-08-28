@@ -217,21 +217,30 @@ class UIIcons {
   /// ic_watermark
   static const IconData ic_watermark = IconData(0xe03e, fontFamily: iconFontFamily);
 
+  /// kit_arrow_down
+  static const IconData kit_arrow_down = IconData(0xe03f, fontFamily: iconFontFamily);
+
+  /// kit_arrow_right
+  static const IconData kit_arrow_right = IconData(0xe040, fontFamily: iconFontFamily);
+
   /// mtrl_ic_arrow_drop_down
-  static const IconData mtrl_ic_arrow_drop_down = IconData(0xe03f, fontFamily: iconFontFamily);
+  static const IconData mtrl_ic_arrow_drop_down = IconData(0xe041, fontFamily: iconFontFamily);
 
   /// mtrl_ic_arrow_drop_up
-  static const IconData mtrl_ic_arrow_drop_up = IconData(0xe040, fontFamily: iconFontFamily);
+  static const IconData mtrl_ic_arrow_drop_up = IconData(0xe042, fontFamily: iconFontFamily);
 
   /// mtrl_ic_cancel
-  static const IconData mtrl_ic_cancel = IconData(0xe041, fontFamily: iconFontFamily);
+  static const IconData mtrl_ic_cancel = IconData(0xe043, fontFamily: iconFontFamily);
 
   /// mtrl_ic_error
-  static const IconData mtrl_ic_error = IconData(0xe042, fontFamily: iconFontFamily);
+  static const IconData mtrl_ic_error = IconData(0xe044, fontFamily: iconFontFamily);
 
   /// settings
-  static const IconData settings = IconData(0xe043, fontFamily: iconFontFamily);
+  static const IconData settings = IconData(0xe045, fontFamily: iconFontFamily);
+
+  /// swap_rounded
+  static const IconData swap_rounded = IconData(0xe046, fontFamily: iconFontFamily);
 
   /// trusty_security
-  static const IconData trusty_security = IconData(0xe044, fontFamily: iconFontFamily);
+  static const IconData trusty_security = IconData(0xe047, fontFamily: iconFontFamily);
 }

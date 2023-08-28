@@ -8,10 +8,10 @@ import 'package:trust_wallet_scm/domain/models/token.dart';
 part 'wallet_screen_v2_event.dart';
 part 'wallet_screen_v2_state.dart';
 
-class WelcomeScreenV2 extends Bloc<WelcomeScreenV2Event, WelcomeScreenV2State> {
+class WelcomeScreenV2Bloc extends Bloc<WelcomeScreenV2Event, WelcomeScreenV2State> {
   final BinanceRepository _binanceRepository;
 
-  WelcomeScreenV2({
+  WelcomeScreenV2Bloc({
     required BinanceRepository binanceRepository,
   })  : _binanceRepository = binanceRepository,
         super(WelcomeScreenV2InitialState()) {

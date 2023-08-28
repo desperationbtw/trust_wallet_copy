@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: ("Кошелек"),
                 ),
                 UIBottomNavigationItem(
-                  iconData: Icons.swap_horiz_sharp,
+                  iconData: UIIcons.ic_dex,
                   title: ("Своп"),
                 ),
                 UIBottomNavigationItem(
